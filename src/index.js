@@ -24,13 +24,13 @@ const transformLineEnding = (string, lineEnding) => {
   return string;
 };
 
-let LineEndings = {
+const LineEndings = {
   CR: Symbol("CR"),
   LF: Symbol("LF"),
   CRLF: Symbol("CRLF")
 };
 
-let LineEndingReplacements = {
+const LineEndingReplacements = {
   replaceCR: (string, newEnding) =>
     string.replace(/(\r+)([^\n]|$)/g, (_match, p1, p2) => {
       return `${newEnding.repeat(p1.length)}${p2}`;
